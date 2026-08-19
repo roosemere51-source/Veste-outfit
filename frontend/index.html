@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veste+ | Loja de Roupas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="#">VESTE<span>+</span></a>
+    <div class="search"><input id="search" placeholder="Buscar produtos..."><button id="searchBtn">🔎</button></div>
+    <button class="cart-btn" id="cartBtn">🛒 <span>Carrinho</span> <b id="cartCount">0</b></button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-content">
+    <div>
+      <p class="eyebrow">NOVA COLEÇÃO 2026</p>
+      <h1>Seu estilo.<br><span>Sua identidade.</span></h1>
+      <p>Peças selecionadas para deixar seu visual ainda mais marcante.</p>
+      <a href="#produtos" class="primary">Comprar agora</a>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+  <div class="toolbar">
+    <div>
+      <h2 id="produtos">Produtos</h2>
+      <p id="resultInfo"></p>
+    </div>
+    <div class="filters">
+      <select id="category">
+        <option value="todos">Todas as categorias</option>
+        <option value="camisetas">Camisetas</option>
+        <option value="calcas">Calças</option>
+        <option value="vestidos">Vestidos</option>
+        <option value="moletons">Moletons</option>
+      </select>
+      <select id="sort">
+        <option value="featured">Destaques</option>
+        <option value="low">Menor preço</option>
+        <option value="high">Maior preço</option>
+      </select>
+    </div>
+  </div>
+  <div class="grid" id="productGrid"></div>
+</main>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head"><h2>Seu carrinho</h2><button id="closeCart">✕</button></div>
+  <div id="cartItems" class="cart-items"></div>
+  <div class="cart-footer">
+    <div class="total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+    <button class="primary full" id="checkoutBtn">Finalizar compra</button>
+    <button class="ghost full" id="clearCart">Limpar carrinho</button>
+  </div>
+</aside>
+
+<div class="modal" id="checkoutModal">
+  <div class="modal-card">
+    <button class="modal-close" id="closeModal">✕</button>
+    <div id="checkoutForm">
+      <p class="eyebrow">CHECKOUT</p>
+      <h2>Finalizar pedido</h2>
+      <div class="summary" id="checkoutSummary"></div>
+      <div class="form-grid">
+        <label>Nome completo<input id="name" required></label>
+        <label>WhatsApp<input id="phone" placeholder="(00) 00000-0000"></label>
+        <label class="wide">E-mail<input id="email" type="email"></label>
+        <label class="wide">Endereço<input id="address"></label>
+        <label>CEP<input id="cep"></label>
+        <label>Cidade/UF<input id="city"></label>
+      </div>
+      <h3>Forma de pagamento</h3>
+      <div class="payment-options">
+        <label><input type="radio" name="payment" value="pix" checked> Pix</label>
+        <label><input type="radio" name="payment" value="card"> Cartão de crédito</label>
+      </div>
+      <p class="notice">Nesta versão demonstrativa, o checkout não cobra de verdade. Para produção, conecte um gateway de pagamento no backend.</p>
+      <button class="primary full" id="placeOrder">Continuar pagamento</button>
+    </div>
+    <div id="success" class="success hidden">
+      <div class="check">✓</div>
+      <h2>Pedido criado!</h2>
+      <p id="successText"></p>
+      <button class="primary" id="done">Voltar à loja</button>
+    </div>
+  </div>
+</div>
+
+<footer><div class="container"><strong>VESTE+</strong><p>Moda para todos os momentos.</p><small>© 2026 Veste+. Demonstração de loja.</small></div></footer>
+<script src="script.js"></script>
+</body>
+</html>
